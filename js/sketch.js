@@ -1,9 +1,13 @@
 var lilith; //heroina
 var terra; //piso
 var jogo,config,menu; //classes
+var buttonState; //estado da tela inicial do jogo
+var spikes,moreSpikes; //obstaculos
+var life = 3; //vida da personagem
 
 function preload()
 {
+	spikes=loadImage("img/cactus_02.png");
 }
 
 function setup() {
@@ -13,35 +17,20 @@ function setup() {
 	jogo = new Jogo ();
 	jogo.begin ();
 
-	//sprite da heroina
-	lilith = createSprite (600, 200);
+	//criando novo objeto da classe config
+	config = new Config ();
 
-	//sprite do piso
-	terra = createSprite (600, 550, 1200, 300);
 }
 
 function draw() {
 	background ("black");
-	drawSprites();
 
-	//colisão entre lilith x terra
-	lilith.collide(terra);
-
-	if(keyDown("right_arrow") ||keyDown("left_arrow")){
-		if (keyDown("left_arrow")){
-			lilith.velocityX = -8;
-		}
-		if (keyDown("right_arrow")){
-			lilith.velocityX = 8;
-		}
-	}
-	else{
-		lilith.velocityX = 0;
+	if(buttonState === 1){
+		jogo.starte();
 	}
 
-	lilith.velocityY += 2;
-
-	if(keyDown("up_arrow")){
-		lilith.velocityY = -16;
+	if(buttonState === 2){
+		config.starte();
 	}
+
 }
