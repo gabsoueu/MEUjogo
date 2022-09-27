@@ -1,8 +1,9 @@
 var lilith; //heroina
+var salazar; //vilao
 var terra; //piso
 var jogo,config,menu; //classes
 var buttonState; //estado da tela inicial do jogo
-var spikes,moreSpikes; //obstaculos
+var espinhos,spikes,moreSpikes; //obstaculos
 var life = 3; //vida da personagem
 
 function preload()

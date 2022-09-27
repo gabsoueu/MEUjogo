@@ -6,7 +6,7 @@ class Menu {
         this.botoesC = createButton ("configurações") //botão Configurações
     }
     apElementos () {
-        this.titulo.position (width/2,height/3)
+        this.titulo.position (0,0)
         this.botoesJ.position (width/2,height/3+20)
         this.botoesC.position (width/2,height/3+40)
 
